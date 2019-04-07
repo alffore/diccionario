@@ -8,7 +8,7 @@ def obtenDatos():
 
     query="SELECT * FROM tablatfr Limit 10"
     try:
-        cursor = conn_pef.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        cursor = conn_dic.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cursor.execute(query)
         res = cursor.fetchall()
         cursor.close()
