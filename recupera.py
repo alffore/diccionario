@@ -1,3 +1,4 @@
+# coding=utf-8
 '''
 Código inicial para recuperar información de PostgreSQL a traves de psycopg2 https://pypi.org/project/psycopg2/
 Adicionalmente se encuentra en GitHUB: https://github.com/alffore/diccionario
@@ -26,7 +27,7 @@ def obtenDatos():
         print(error)
 
 
-# Comienza el codigo
+# Comienza el código
 
 res = obtenDatos()
 
