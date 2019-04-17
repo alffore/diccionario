@@ -21,7 +21,7 @@ def procesaentrada(ad):
     b = round(255 * (1 + math.sin(ad[1] + 3 * alfa)) / 2)
 
     color = 'rgb(' + str(r) + ',' + str(g) + ',' + str(b) + ');'
-    return '<div class="c" id="' + sid + '" style="background-color:' + color + '">'
+    return '<div class="c" id="' + sid + '" style="background-color:' + color + '"></div>'
 
 
 def imprimeHeader():
