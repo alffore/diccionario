@@ -21,12 +21,12 @@ def procesaentrada(ad):
     b = round(255 * (1 + math.sin(ad[1] + 3 * alfa)) / 2)
 
     color = 'rgb(' + str(r) + ',' + str(g) + ',' + str(b) + ');'
-    return '<div id="' + sid + '" style="background-color:' + color + '">'
+    return '<div class="c" id="' + sid + '" style="background-color:' + color + '">'
 
 
 def imprimeHeader():
-    buff = '<html><head><style>  * {padding: 0px; margin: 0px;} .contendor {display: flex; width: 100%; height: ' \
-           '1200px;} div{width: 2px; height: 2px;}</style></head><body><div class="contenedor">'
+    buff = '<html><head><style>  * {padding: 0px; margin: 0px;} .contendor{display: flex; width: 100%; height: ' \
+           '1200px; flex-wrap: wrap;} .c{width: 2px; height: 2px;}</style></head><body><div class="contenedor">'
     return buff
 
 
