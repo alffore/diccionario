@@ -31,6 +31,7 @@ try:
 
     for res in cursor:
         print(res)
+        print(procesaentrada(res))
 
     cursor.close()
 
