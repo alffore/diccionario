@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d068110a-fecf-4b5a-b8b0-58618ebf7988" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/alfonso.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/alfonso.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/correlacion.py" beforeDir="false" afterPath="$PROJECT_DIR$/correlacion.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/correlacion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+            <state relative-caret-position="545">
+              <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
               <folding>
                 <element signature="e#148#163#0" expanded="true" />
               </folding>
@@ -145,8 +146,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/correlacion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        <state relative-caret-position="545">
+          <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
           <folding>
             <element signature="e#148#163#0" expanded="true" />
           </folding>
