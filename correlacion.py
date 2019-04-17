@@ -14,11 +14,12 @@ import math
 
 def procesaentrada(ad):
     sid = 'i' + str(ad[0])
-    alfa =math.pi/4
-    r=round(255*sin(ad[1])/2)
-    g=round(255*sin(ad[1]+alfa)/2)
-    b=round(255*sin(ad[1]+2*alfa)/2)
-    color = 'rgb('+str(r)+','+str(g)+','+str(b)+')'
+    alfa = math.pi / 4
+    r = round(255 * math.sin(ad[1]) / 2)
+    g = round(255 * math.sin(ad[1] + alfa) / 2)
+    b = round(255 * math.sin(ad[1] + 2 * alfa) / 2)
+
+    color = 'rgb(' + str(r) + ',' + str(g) + ',' + str(b) + ')'
     return '<div id="' + sid + '" style="background-color:' + color + '">'
 
 
