@@ -36,7 +36,7 @@ def imprimeFooter():
 
 print(imprimeHeader())
 
-query = "SELECT tablatfr_id,peso FROM tablatfr WHERE trim(cadena) !~*'^$'"
+query = "SELECT tablatfr_id,peso FROM tablatfr WHERE trim(cadena) !~*'^$' limit 1000"
 try:
     cursor = conn_dic.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cursor.execute(query)
