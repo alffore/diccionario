@@ -25,7 +25,7 @@ def procesaentrada(ad):
 
 
 def imprimeHeader():
-    buff = '<html><head><style>  * {padding: 0px; margin: 0px;} .contendor{display: flex; width: 100%; height: ' \
+    buff = '<html><head><style>  * {padding: 0px; margin: 0px;} .contenedor{display: flex; width: 100%; height: ' \
            '1200px; flex-wrap: wrap;} .c{width: 2px; height: 2px;}</style></head><body><div class="contenedor">'
     return buff
 
@@ -36,7 +36,7 @@ def imprimeFooter():
 
 print(imprimeHeader())
 
-query = "SELECT tablatfr_id,peso FROM tablatfr WHERE trim(cadena) !~*'^$' limit 1000"
+query = "SELECT tablatfr_id,peso FROM tablatfr WHERE trim(cadena) !~*'^$' limit 100000"
 try:
     cursor = conn_dic.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cursor.execute(query)
