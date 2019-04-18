@@ -18,7 +18,7 @@ def procesaentrada(ad):
     alfa = math.pi / 4
     r = round(255 * (1 + math.sin(ad[1])) / 2)
     g = round(255 * (1 + math.sin(ad[1] + alfa)) / 2)
-    b = round(255 * (1 + math.sin(ad[1] + 3 * alfa)) / 2)
+    b = round(255 * (1 + math.sin(ad[1]*ad[1] + 3 * alfa)) / 2)
 
     color = 'rgb(' + str(r) + ',' + str(g) + ',' + str(b) + ');'
     return '<div class="c" id="' + sid + '" style="background-color:' + color + '"></div>'
@@ -36,13 +36,12 @@ def imprimeFooter():
 
 print(imprimeHeader())
 
-query = "SELECT tablatfr_id,peso FROM tablatfr WHERE trim(cadena) !~*'^$' limit 200000"
+query = "SELECT tablatfr_id,peso FROM tablatfr WHERE trim(cadena) !~*'^$' ORDER BY random() limit 500000"
 try:
     cursor = conn_dic.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cursor.execute(query)
 
     for res in cursor:
-        # print(res)
         print(procesaentrada(res))
 
     cursor.close()
