@@ -43,12 +43,11 @@ def procesaEntradaG(cad):
     return
 
 
-def insertaDatos():
-
+def insertadatos():
     cursori = conn_dic.cursor()
 
     for cad in diccionario:
-        if cad is None or len(cad) == 0 or len(cad)>1024:
+        if cad is None or len(cad) == 0 or len(cad) > 1024:
             continue
         # peso = diccionario[cad]
         cursori.execute('INSERT INTO diccon (cadena,peso) VALUES (%s,%s)', (cad, diccionario[cad],))
@@ -100,7 +99,7 @@ except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 
 
-insertaDatos()
+insertadatos()
+
 conn_dic.close()
 conn_sic.close()
-
