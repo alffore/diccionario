@@ -44,15 +44,15 @@ def procesaEntradaG(cad):
 
 
 def insertaDatos():
-    cursor = conn_dic.cursosr()
+    cursori = conn_dic.cursosr()
     for cad in diccionario:
         if cad is None or len(cad) == 0:
             continue
         # peso = diccionario[cad]
-        cursor.execute('INSERT INTO diccon (cadena,peso) VALUES (%s,%s)', (cad, diccionario[cad],))
+        cursori.execute('INSERT INTO diccon (cadena,peso) VALUES (%s,%s)', (cad, diccionario[cad],))
 
-    cursor.commit()
-    cursos.close()
+    cursori.commit()
+    cursori.close()
 
     return
 
