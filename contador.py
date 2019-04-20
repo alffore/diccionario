@@ -49,7 +49,7 @@ def insertaDatos():
     return
 
 
-'''Método que procesa entradas de las busquedas'''
+'''Se procesa entradas de las busquedas'''
 query = "SELECT cadena,peso FROM tablatfr WHERE trim(cadena) !~*'^$' limit 1000"
 
 try:
@@ -64,7 +64,7 @@ try:
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 
-'''Método que procesa entras de la BD del SIC-RENIC'''
+'''Se procesa entras de la BD del SIC-RENIC'''
 aux_campos = ['tabla', 'nombre', 'campo0', 'campo1', 'campo2', 'municipio', 'estado']
 apalabras = {}
 query = "SELECT tabla,nombre,campo0,campo1,campo2,municipio,estado FROM mvbusquedas limit 10"
