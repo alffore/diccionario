@@ -22,7 +22,7 @@ def procesaentrada(ares):
                 diccionario[cad] = peso
             elif cad in diccionario:
                 diccionario[cad] = (diccionario[cad] + peso)
-            else
+            else:
                 diccionario[cad] = peso
 
     return
@@ -32,7 +32,7 @@ def procesaEntradaG(cad):
 
     if cad in diccionario:
         diccionario[cad] = diccionario[cad]+1
-    else
+    else:
         diccionario[cad] = 1
 
     return
@@ -77,7 +77,7 @@ try:
                 for palabra in apalabra:
                     if len(palabra) >0:
                         procesaEntradaG(palabra)
-            else
+            else:
                 procesaEntradaG(res[c])
 
 except (Exception, psycopg2.DatabaseError) as error:
