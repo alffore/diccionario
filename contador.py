@@ -44,21 +44,23 @@ def procesaEntradaG(cad):
 
 
 def insertaDatos():
-    cursori = conn_dic.cursosr()
+
+    cursori = conn_dic.cursor()
+
     for cad in diccionario:
-        if cad is None or len(cad) == 0:
+        if cad is None or len(cad) == 0 or len(cad)>1024:
             continue
         # peso = diccionario[cad]
         cursori.execute('INSERT INTO diccon (cadena,peso) VALUES (%s,%s)', (cad, diccionario[cad],))
 
-    cursori.commit()
+    conn_dic.commit()
     cursori.close()
 
     return
 
 
 '''Se procesa entradas de las busquedas'''
-query = "SELECT cadena,peso FROM tablatfr WHERE trim(cadena) !~*'^$' limit 10"
+query = "SELECT cadena,peso FROM tablatfr WHERE trim(cadena) !~*'^$'"
 
 try:
     cursor = conn_dic.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -97,7 +99,8 @@ try:
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 
+
+insertaDatos()
 conn_dic.close()
 conn_sic.close()
 
-insertaDatos()
