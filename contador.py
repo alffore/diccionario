@@ -12,7 +12,6 @@ conn_sic = psycopg2.connect('dbname=nuevadbrenic host=127.0.0.1 port=5432 user=u
 # print(conn_sic.set_client_encoding('UTF8'))
 
 
-
 diccionario = {}
 
 
@@ -45,17 +44,16 @@ def procesaEntradaG(cad):
 
 
 def insertaDatos():
+    cursor = conn_dic.cursosr()
     for cad in diccionario:
-        if( (cad is None) or (len(cad) == 0)):
+        if cad is None or len(cad) == 0:
             continue
-        peso = diccionario[cad]        
-        cadi=u' '.join((cad,)).encode('utf-8').strip()
-        print(cadi)
-        print(cadi.decode('utf-8'))
-        #print(cadi.decode('utf-8','ignore'))
-        #print(cad.decode('utf-8','ignore').encode('utf-8'))
-        # query = 'INSERT INTO diccionario (cadena,peso) VALUES (\'' + cad + '\',' + str(peso) + ');'
-        # print(query)
+        # peso = diccionario[cad]
+        cursor.execute('INSERT INTO diccon (cadena,peso) VALUES (%s,%s)', (cad, diccionario[cad],))
+
+    cursor.commit()
+    cursos.close()
+
     return
 
 
