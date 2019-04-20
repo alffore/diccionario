@@ -1,9 +1,11 @@
+# coding=utf-8
 ''''
 Algoritmo que cuenta todas las palabras y hace una estadistica en la BD
 '''
 
 import psycopg2
 import psycopg2.extras
+from typing import Any
 
 conn_dic = psycopg2.connect('dbname=DICSR host=127.0.0.1 port=5432 user=userrenic')
 conn_sic = psycopg2.connect('dbname=nuevadbrenic host=127.0.0.1 port=5432 user=userrenic')
@@ -27,11 +29,12 @@ def procesaentrada(ares):
 
     return
 
+
 def procesaEntradaG(cad):
-    cad=cad.strip()
+    cad = cad.strip()
 
     if cad in diccionario:
-        diccionario[cad] = diccionario[cad]+1
+        diccionario[cad] = diccionario[cad] + 1
     else:
         diccionario[cad] = 1
 
@@ -41,7 +44,7 @@ def procesaEntradaG(cad):
 def insertaDatos():
     for cad in diccionario:
         peso = diccionario[cad]
-        query='INSERT INTO diccionario (cadena,peso) VALUES (\''+cad+'\','+str(peso)+');'
+        query = 'INSERT INTO diccionario (cadena,peso) VALUES (\'' + cad + '\',' + str(peso) + ');'
         print(query)
     return
 
@@ -61,30 +64,31 @@ try:
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 
-
 '''Método que procesa entras de la BD del SIC-RENIC'''
-aux_campos=['tabla','nombre','campo0','campo1','campo2','municipio','estado']
+aux_campos = ['tabla', 'nombre', 'campo0', 'campo1', 'campo2', 'municipio', 'estado']
+apalabras = {}
 query = "SELECT tabla,nombre,campo0,campo1,campo2,municipio,estado FROM mvbusquedas limit 10"
 
 try:
     cursor_sic = conn_sic.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cursor_sic.execute(query)
 
-    for res in  cursor_sic.fetchall():
+    for res in cursor_sic.fetchall():
         for c in aux_campos:
-            if c!='estado' or c!='municipio':
+            if c != 'estado' or c != 'municipio':
                 apalabras = res[c].split(' ')
-                for palabra in apalabra:
-                    if len(palabra) >0:
+                for palabra in apalabras:
+                    if len(palabra) > 0:
                         procesaEntradaG(palabra)
             else:
                 procesaEntradaG(res[c])
 
+    cursor_sic.close()
+
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 
-
-
 conn_dic.close()
+conn_sic.close()
 
 insertaDatos()
