@@ -8,8 +8,6 @@ from typing import Any
 
 conn_dic = psycopg2.connect('dbname=DICSR host=127.0.0.1 port=5432 user=userrenic')
 conn_sic = psycopg2.connect('dbname=nuevadbrenic host=127.0.0.1 port=5432 user=userrenic')
-# conn_sic.set_client_encoding('UTF8')
-# print(conn_sic.set_client_encoding('UTF8'))
 
 
 diccionario = {}
@@ -22,6 +20,7 @@ def procesaentrada(ares):
     for aux in acad:
         cad = aux.strip()
         if len(cad) > 0:
+            cad.translate({ord(i): None for i in '-.,+{}[]/\''})
             if len(diccionario) == 0:
                 diccionario[cad] = peso
             elif cad in diccionario:
@@ -34,6 +33,8 @@ def procesaentrada(ares):
 
 def procesaEntradaG(cad):
     cad = cad.strip()
+
+    cad.translate({ord(i): None for i in '-.,+{}[]/\''})
 
     if cad in diccionario:
         diccionario[cad] = diccionario[cad] + 1
