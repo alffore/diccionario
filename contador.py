@@ -12,8 +12,7 @@ from typing import Any
 conn_dic = psycopg2.connect('dbname=DICSR host=127.0.0.1 port=5432 user=userrenic')
 conn_sic = psycopg2.connect('dbname=nuevadbrenic host=127.0.0.1 port=5432 user=userrenic')
 
-
-cardes ='-.,+*{}[]/\'"()?¡!·#º\|:;><{¨'
+cardes = '-.,+*{}[]/()?¡!·#º\|:;><{¨^~'
 
 diccionario = {}
 
@@ -80,7 +79,6 @@ try:
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 
-
 '''Se procesa entradas de la BD del SIC-RENIC'''
 aux_campos = ['tabla', 'nombre', 'campo0', 'campo1', 'campo2', 'municipio', 'estado']
 apalabras = {}
@@ -105,7 +103,6 @@ try:
 
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
-
 
 insertadatos()
 
