@@ -1,5 +1,6 @@
+# coding=utf-8
 ''''
-Algoritmo que cuenta todas las palabras y hace una estadistica en la BD
+Algoritmo que cuenta todas las palabras y hace una estadística en la BD
 
 @TODO: Ver + campos en tablas
 '''
@@ -78,6 +79,7 @@ try:
 
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
+
 
 '''Se procesa entradas de la BD del SIC-RENIC'''
 aux_campos = ['tabla', 'nombre', 'campo0', 'campo1', 'campo2', 'municipio', 'estado']
