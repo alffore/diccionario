@@ -1,7 +1,7 @@
 ''''
 Algoritmo que cuenta todas las palabras y hace una estadistica en la BD
 
-@TODO: Ver + campos en tablas, limpiar textos de simbolos de puntuación
+@TODO: Ver + campos en tablas
 '''
 
 import psycopg2
@@ -22,7 +22,7 @@ def procesaentrada(ares):
     for aux in acad:
         cad = aux.strip()
         if len(cad) > 0:
-            cad.translate({ord(i): None for i in '-.,+{}[]/\''})
+            cad.translate({ord(i): None for i in '-.,+*{}[]/\'"'})
             if len(diccionario) == 0:
                 diccionario[cad] = peso
             elif cad in diccionario:
@@ -36,7 +36,7 @@ def procesaentrada(ares):
 def procesaEntradaG(cad):
     cad = cad.strip()
 
-    cad.translate({ord(i): None for i in '-.,+{}[]/\''})
+    cad.translate({ord(i): None for i in '-.,+*{}[]/\'"'})
 
     if cad in diccionario:
         diccionario[cad] = diccionario[cad] + 1
