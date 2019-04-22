@@ -1,5 +1,7 @@
 ''''
 Algoritmo que cuenta todas las palabras y hace una estadistica en la BD
+
+@TODO: Ver + campos en tablas, limpiar textos de simbolos de puntuación
 '''
 
 import psycopg2
@@ -50,7 +52,6 @@ def insertadatos():
     for cad in diccionario:
         if cad is None or len(cad) == 0 or len(cad) > 1024:
             continue
-        # peso = diccionario[cad]
         cursori.execute('INSERT INTO diccon (cadena,peso) VALUES (%s,%s)', (cad, diccionario[cad],))
 
     conn_dic.commit()
@@ -74,7 +75,7 @@ try:
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 
-'''Se procesa entras de la BD del SIC-RENIC'''
+'''Se procesa entradas de la BD del SIC-RENIC'''
 aux_campos = ['tabla', 'nombre', 'campo0', 'campo1', 'campo2', 'municipio', 'estado']
 apalabras = {}
 query = "SELECT tabla,nombre,campo0,campo1,campo2,municipio,estado FROM mvbusquedas"
