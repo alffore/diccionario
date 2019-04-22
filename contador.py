@@ -12,6 +12,8 @@ conn_dic = psycopg2.connect('dbname=DICSR host=127.0.0.1 port=5432 user=userreni
 conn_sic = psycopg2.connect('dbname=nuevadbrenic host=127.0.0.1 port=5432 user=userrenic')
 
 
+cardes ='-.,+*{}[]/\'"()?¡!·#º\|:;><{¨'
+
 diccionario = {}
 
 
@@ -20,9 +22,11 @@ def procesaentrada(ares):
     peso = ares[1]
 
     for aux in acad:
+        aux.translate({ord(i): None for i in cardes})
         cad = aux.strip()
+
         if len(cad) > 0:
-            cad.translate({ord(i): None for i in '-.,+*{}[]/\'"'})
+
             if len(diccionario) == 0:
                 diccionario[cad] = peso
             elif cad in diccionario:
@@ -36,7 +40,7 @@ def procesaentrada(ares):
 def procesaEntradaG(cad):
     cad = cad.strip()
 
-    cad.translate({ord(i): None for i in '-.,+*{}[]/\'"'})
+    cad.translate({ord(i): None for i in cardes})
 
     if cad in diccionario:
         diccionario[cad] = diccionario[cad] + 1

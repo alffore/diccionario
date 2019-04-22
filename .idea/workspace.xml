@@ -39,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+            <state relative-caret-position="384">
+              <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
               <folding>
                 <element signature="e#155#170#0" expanded="true" />
               </folding>
@@ -199,8 +199,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+        <state relative-caret-position="384">
+          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
           <folding>
             <element signature="e#155#170#0" expanded="true" />
           </folding>
