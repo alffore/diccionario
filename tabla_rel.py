@@ -3,7 +3,7 @@
 Este código muestra todos los campos y valores implicados en la busqueda y los terminos empleados (solo para registros
 públicos)
 
-@author AAFR <alfforeœgmail.com>
+@author AAFR <alffore@gmail.com>
 '''
 
 import psycopg2
@@ -34,7 +34,7 @@ def recuperaCadenas(tabla, id):
 
 def recuperaDSIC(tabla, id):
     query_sic = "SELECT nombre,campo0,campo1,campo2,municipio,estado FROM mvbusquedas WHERE tabla='" + tabla + \
-                "' AND tabla_id=" + str(id)
+                "' AND id=" + str(id)
     try:
         cursor_sic = conn_sic.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cursor_sic.execute(query_sic)
@@ -48,7 +48,7 @@ def recuperaDSIC(tabla, id):
 
 def procesaentrada(res):
     ren = recuperaDSIC(res['tabla'], res['tabla_id'])
-    d = dict(res, **ren)
+    d = dict(res.items(),ren.items())
     buff = '<tr>'
     for c in ['tabla_id', 'tabla', 'peso', 'cadena', 'nombre', 'campo0', 'campo1', 'campo2', 'municipio', 'estado']:
         if c == 'cadena':
