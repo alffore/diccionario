@@ -48,7 +48,9 @@ def recuperaDSIC(tabla, id):
 
 def procesaentrada(res):
     ren = recuperaDSIC(res['tabla'], res['tabla_id'])
-    
+    print(ren)
+    return ""
+
     if ren is not None:
         d = dict(res.items(), ren.items())
     else:
@@ -67,7 +69,7 @@ def procesaentrada(res):
 def imprimeHeader():
     buff = '<html><head><style> *{font-family: Arial; font-size: 10px;} .contenedor{} </style></head>' \
            '<body><table class="contenedor">'
-    buff += '<tr><th>tabla_id</th><th>tabla</th><th>peso</th><th>cadenas</th><th>nombre</th><th>campo0</th><th>campo1' \
+    buff =buff + '<tr><th>tabla_id</th><th>tabla</th><th>peso</th><th>cadenas</th><th>nombre</th><th>campo0</th><th>campo1' \
             '</th><th>campo2</th><th>municipio</th><th>estado</th></tr>'
     return buff
 
@@ -78,13 +80,14 @@ def imprimeFooter():
 
 imprimeHeader()
 
-query = "SELECT tablatfr_id,tabla,tabla_id,peso FROM tablatfr WHERE trim(cadena) !~*'^$' ORDER BY peso Limit 10"
+query = "SELECT tablatfr_id,tabla,tabla_id,peso FROM tablatfr WHERE trim(cadena) !~*'^$' ORDER BY peso DESC, tablatfr_id Limit 10"
 try:
     cursor_dic = conn_dic.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cursor_dic.execute(query)
 
     for res in cursor_dic.fetchall():
-        print(procesaentrada(res))
+      #  print(res)    
+       print(procesaentrada(res))
 
     cursor_dic.close()
 
