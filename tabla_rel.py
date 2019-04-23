@@ -67,8 +67,8 @@ def procesaentrada(res):
 def imprimeHeader():
     buff = '<html><head><style> *{font-family: Arial; font-size: 10px;} .contenedor{} </style></head>' \
            '<body><table class="contenedor">'
-    buff =buff + '<tr><th>tabla_id</th><th>tabla</th><th>peso</th><th>cadenas</th><th>nombre</th><th>campo0</th><th>campo1' \
-            '</th><th>campo2</th><th>municipio</th><th>estado</th></tr>'
+    buff = buff + '<tr><th>tabla_id</th><th>tabla</th><th>peso</th><th>cadenas</th><th>nombre</th><th>campo0</th><th>campo1' \
+                  '</th><th>campo2</th><th>municipio</th><th>estado</th></tr>'
     return buff
 
 
@@ -84,8 +84,8 @@ try:
     cursor_dic.execute(query)
 
     for res in cursor_dic.fetchall():
-      #  print(res)    
-       print(procesaentrada(res))
+        #  print(res)
+        print(procesaentrada(res))
 
     cursor_dic.close()
 
