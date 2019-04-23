@@ -15,7 +15,7 @@ conn_sic = psycopg2.connect('dbname=nuevadbrenic host=127.0.0.1 port=5432 user=u
 
 def recuperaCadenas(tabla, id):
     cadesal = ' '
-    query_cad = "SELECT cadena FROM tablatfr WHERE trim(cadena) !~*'^$' AND tabla='" + tabla + "' AND tabla_id=" +\
+    query_cad = "SELECT cadena FROM tablatfr WHERE trim(cadena) !~*'^$' AND tabla='" + tabla + "' AND tabla_id=" + \
                 str(id) + " ORDER BY peso"
     try:
         cursor_dic2 = conn_dic.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -48,7 +48,12 @@ def recuperaDSIC(tabla, id):
 
 def procesaentrada(res):
     ren = recuperaDSIC(res['tabla'], res['tabla_id'])
-    d = dict(res.items(),ren.items())
+    
+    if ren is not None:
+        d = dict(res.items(), ren.items())
+    else:
+        d = res
+
     buff = '<tr>'
     for c in ['tabla_id', 'tabla', 'peso', 'cadena', 'nombre', 'campo0', 'campo1', 'campo2', 'municipio', 'estado']:
         if c == 'cadena':
