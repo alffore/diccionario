@@ -48,7 +48,7 @@ def recuperaDSIC(tabla, id):
 
 def procesaentrada(res):
     ren = recuperaDSIC(res['tabla'], res['tabla_id'])
-    
+
     if ren is not None:
         d = dict(res.items(), ren.items())
     else:
