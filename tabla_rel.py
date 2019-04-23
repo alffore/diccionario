@@ -3,7 +3,7 @@
 Este código muestra todos los campos y valores implicados en la busqueda y los terminos empleados (solo para registros
 públicos)
 
-@author AAFR <alfforeœgmail.com>
+@author AAFR <alffore@gmail.com>
 '''
 
 import psycopg2
@@ -48,7 +48,7 @@ def recuperaDSIC(tabla, id):
 
 def procesaentrada(res):
     ren = recuperaDSIC(res['tabla'], res['tabla_id'])
-    d = dict(res, **ren)
+    d = dict(res.items(),ren.items())
     buff = '<tr>'
     for c in ['tabla_id', 'tabla', 'peso', 'cadena', 'nombre', 'campo0', 'campo1', 'campo2', 'municipio', 'estado']:
         if c == 'cadena':

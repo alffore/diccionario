@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d068110a-fecf-4b5a-b8b0-58618ebf7988" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tabla_rel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/alfonso.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/alfonso.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabla_rel.py" beforeDir="false" afterPath="$PROJECT_DIR$/tabla_rel.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tabla_rel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="63" column="165" selection-start-line="63" selection-start-column="165" selection-end-line="63" selection-end-column="165" />
+            <state relative-caret-position="-124">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding>
                 <element signature="e#173#188#0" expanded="true" />
               </folding>
@@ -224,8 +222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tabla_rel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="63" column="165" selection-start-line="63" selection-start-column="165" selection-end-line="63" selection-end-column="165" />
+        <state relative-caret-position="-124">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding>
             <element signature="e#173#188#0" expanded="true" />
           </folding>
