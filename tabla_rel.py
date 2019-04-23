@@ -34,7 +34,7 @@ def recuperaCadenas(tabla, id):
 
 def recuperaDSIC(tabla, id):
     query_sic = "SELECT nombre,campo0,campo1,campo2,municipio,estado FROM mvbusquedas WHERE tabla='" + tabla + \
-                "' AND tabla_id=" + str(id)
+                "' AND id=" + str(id)
     try:
         cursor_sic = conn_sic.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cursor_sic.execute(query_sic)
